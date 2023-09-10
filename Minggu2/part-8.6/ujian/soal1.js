@@ -3,6 +3,24 @@ Diberikan sebuah function targetTerdekat(arr) yang menerima satu parameter berup
 */
 function targetTerdekat(arr) {
     // you can only write your code here!
+    let indexOfO = arr.indexOf('o')
+    if ( indexOfO === -1 ) {
+        return 0
+    }
+
+    let indexOfX = arr.indexOf('x', indexOfO)
+    if ( indexOfX === -1 ) { 
+        indexOfX = arr.lastIndexOf('x', indexOfO)
+    }
+
+    if( indexOfX === -1 ) { 
+        return 0
+    }
+
+    const distance = Math.abs(indexOfX - indexOfO)
+
+    return distance
+    
 }
 
 // TEST CASES
